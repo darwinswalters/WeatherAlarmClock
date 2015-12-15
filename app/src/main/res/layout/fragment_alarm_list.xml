@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.darwinwalters.weatheralarmclock.AlarmListFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/add_button"-->
+        <!--android:layout_width="@dimen/round_button_diameter"-->
+        <!--android:layout_height="@dimen/round_button_diameter"-->
+        <!--android:layout_gravity="end|bottom"-->
+        <!--android:layout_marginBottom="@dimen/add_button_margin"-->
+        <!--android:layout_marginEnd="@dimen/add_button_margin"-->
+        <!--android:src="@android:drawable/ic_input_add"/>-->
+
+</FrameLayout>
