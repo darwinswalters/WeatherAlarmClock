@@ -6,9 +6,6 @@ import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
-import static org.mockito.Mockito.*;
 
 
 import static org.junit.Assert.*;
@@ -24,13 +21,7 @@ public class AlarmTimeListHandlerImplTest {
 
     @Before
     public void setUp() throws Exception {
-        alarmTimeListHandlerImpl = new AlarmTimeListHandlerImpl();
-        alarmTimeFormat = new SimpleDateFormat("h:mm a");
-        alarmTime = Calendar.getInstance();
-        alarmTime.set(Calendar.HOUR, 4);
-        alarmTime.set(Calendar.MINUTE, 20);
-
-
+        alarmTimeListHandlerImpl = AlarmTimeListHandlerImpl.getInstance();
     }
 
     @After
@@ -41,13 +32,30 @@ public class AlarmTimeListHandlerImplTest {
     @Test
     public void saveOneAlarmTimeToList() {
         // IMPLEMENT
-        int hour = 4;
-        int min = 20;
+        String alarmTime = "16:20";
+        boolean alarmActive = false;
 
-        alarmTimeListHandlerImpl.addAlarmTimeToList(hour, min);
-        assertEquals(hour, alarmTimeListHandlerImpl.getAlarmTimeList().get(0).get(Calendar.HOUR));
-        assertEquals(min, alarmTimeListHandlerImpl.getAlarmTimeList().get(0).get(Calendar.MINUTE));
+        alarmTimeListHandlerImpl.addAlarmTimeToList(alarmTime, alarmActive);
+        assertEquals(alarmTime, alarmTimeListHandlerImpl.getAlarmTimeList().get(0).getAlarmTime());
+        assertEquals(alarmActive, alarmTimeListHandlerImpl.getAlarmTimeList().get(0).getAlarmActive());
 
+    }
 
+//    @Test
+//    public void pairSuccessfullyConvertedToTimeStrings() {
+//        // Test to see if date is updated to
+//
+//        AlarmPair testAlarmPair = new AlarmPair(4,20);
+//
+//
+//        String testDateString = alarmTimeListHandlerImpl.pairToString(testAlarmPair);
+//
+//        assertEquals("4:20", testDateString);
+//
+//    }
+
+    @Test
+    public void stringSuccessfullyAddedToAlarmTimeStringList() {
+        // Test if the string created in pairToString is added to the array list
     }
 }

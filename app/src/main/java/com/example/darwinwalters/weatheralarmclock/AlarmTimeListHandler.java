@@ -1,7 +1,5 @@
 package com.example.darwinwalters.weatheralarmclock;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -9,11 +7,15 @@ import java.util.List;
  */
 public interface AlarmTimeListHandler {
 
-     List<Calendar> getAlarmTimeList();
+     public AlarmTimeListHandlerImpl getInstance();
+
+     List<AlarmPair> getAlarmTimeList();
 
      public void addAlarmTimeToList(int hour, int minute);
 
      public void createAlarmDate(int selectedHour, int selectedMinute);
+
+     public String pairToString(AlarmPair alarmPairToConvert);
 
      //private void arrangeAlarmTimeList();
 }

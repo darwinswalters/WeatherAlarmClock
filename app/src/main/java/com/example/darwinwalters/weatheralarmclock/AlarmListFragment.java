@@ -3,12 +3,14 @@ package com.example.darwinwalters.weatheralarmclock;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.Toast;
 
 
@@ -23,6 +25,7 @@ public class AlarmListFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    public static AlarmTimeListHandlerImpl alarmTimeListHandlerImpl;
 
 //    public AlarmListFragment() {
 //        // Required empty public constructor
@@ -31,6 +34,8 @@ public class AlarmListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        alarmTimeListHandlerImpl.getInstance();
 
 
     }
@@ -79,6 +84,8 @@ public class AlarmListFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+
+        void onTimePickerCompleted();
     }
 
     public void addAlarmClicked(View view) {
@@ -91,5 +98,6 @@ public class AlarmListFragment extends Fragment {
 //        sampleToast.show();
 
     }
+
 
 }
